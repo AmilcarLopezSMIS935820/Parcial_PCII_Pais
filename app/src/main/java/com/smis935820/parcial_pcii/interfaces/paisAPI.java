@@ -26,6 +26,6 @@ public interface paisAPI {
     Call<Pais> updatePais(@Body Pais pais);
 
     @DELETE("apiPais/Delete.php/")
-    Call<Pais> deletePais(@Query("id") String id);
+    Call<Pais> deletePais(@Query("id") Pais id);
 
 }

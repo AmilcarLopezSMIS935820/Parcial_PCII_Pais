@@ -20,7 +20,7 @@ import retrofit2.Response;
 public class formulario extends AppCompatActivity {
     EditText etid, etname, etdescripcion;
     TextView tvResponse;
-    Button btnsave, btnedit;
+    Button btnsave, btnedit, btdelete;
 
     private paisAPI paisAPI;
 
@@ -33,7 +33,10 @@ public class formulario extends AppCompatActivity {
         etdescripcion = findViewById(R.id.et_descripcion);
         btnsave = findViewById(R.id.btnsave);
         btnedit = findViewById(R.id.btnedit);
+        btdelete = findViewById(R.id.btdelete);
         tvResponse = findViewById(R.id.tvResponse);
+
+
 
 
 
@@ -50,6 +53,7 @@ public class formulario extends AppCompatActivity {
 
                 }
                 savePais(etname.getText().toString(), etdescripcion.getText().toString());
+
             }
         });
 
@@ -109,6 +113,8 @@ public class formulario extends AppCompatActivity {
             }
         });
 
+
+
     }
     // hacer visible el textview-tvResponse
     public void showResponse(String response){
@@ -116,6 +122,23 @@ public class formulario extends AppCompatActivity {
             tvResponse.setVisibility(View.VISIBLE);
         }
         tvResponse.setText(response);
+    }
+
+    public void deletePais(Integer id, String nombre, String descripcion){
+        Pais pais = new Pais(id, nombre, descripcion);
+        paisAPI.deletePais(pais).enqueue(new Callback<Pais>() {
+            @Override
+            public void onResponse(Call<Pais> call, Response<Pais> response) {
+                Pais responsePais =  response.body();
+                String responseString = "Response code in: "+ etid + response.code()+
+                        "\nData> "+pais.toString();
+            }
+
+            @Override
+            public void onFailure(Call<Pais> call, Throwable t) {
+
+            }
+        });
     }
 
 }
