@@ -16,6 +16,8 @@ import com.smis935820.parcial_pcii.models.Pais;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class formulario extends AppCompatActivity {
     EditText etid, etname, etdescripcion;
@@ -23,6 +25,8 @@ public class formulario extends AppCompatActivity {
     Button btnsave, btnedit, btdelete;
 
     private paisAPI paisAPI;
+    private GsonConverterFactory GsonConverterFactory;
+    public Retrofit Retrofit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +67,14 @@ public class formulario extends AppCompatActivity {
             public void onClick(View v) {
                 editPais(etid.getText().toString(),etname.getText().toString(), etdescripcion.getText().toString());
 
+            }
+        });
+
+        //delete
+        btdelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            deletePais(etid.getText().toString(), etname.getText().toString(), etdescripcion.getText().toString());
             }
         });
     }
@@ -124,18 +136,23 @@ public class formulario extends AppCompatActivity {
         tvResponse.setText(response);
     }
 
-    public void deletePais(Integer id, String nombre, String descripcion){
-        Pais pais = new Pais(id, nombre, descripcion);
-        paisAPI.deletePais(pais).enqueue(new Callback<Pais>() {
+    public void deletePais(String id, String nombre, String descripcion){
+        Pais pais = new Pais(id,nombre, descripcion );
+        paisAPI.updatePais(pais).enqueue(new Callback<Pais>() {
             @Override
             public void onResponse(Call<Pais> call, Response<Pais> response) {
-                Pais responsePais =  response.body();
-                String responseString = "Response code in: "+ etid + response.code()+
-                        "\nData> "+pais.toString();
+                Pais responsePais = response.body();
+                String responseString = "Response code: " + response.code() +
+                        "\nData: "+ pais.toString();
+
+                //mostrar respuesta
+                showResponse(responseString.toString());
+
             }
 
             @Override
             public void onFailure(Call<Pais> call, Throwable t) {
+                showResponse(t.getMessage());
 
             }
         });

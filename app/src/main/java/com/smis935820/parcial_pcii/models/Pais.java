@@ -30,6 +30,9 @@ public class Pais {
         this.descripcion = descripcion;
     }
 
+    public Pais(String id, String nombre, String descripcion) {
+    }
+
     public Integer getId() {
         return id;
     }
