@@ -141,4 +141,15 @@ public class formulario extends AppCompatActivity {
         });
     }
 
+    public void v1(View view){
+        Intent i = new Intent(this, Registros.class);
+        startActivity(i);
+        finish();
+    }
+
+    public void v2(View view){
+        Intent a = new Intent(this, Busqueda.class);
+        startActivity(a);
+        finish();
+    }
 }

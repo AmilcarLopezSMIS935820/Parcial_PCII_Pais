@@ -2,6 +2,7 @@ package com.smis935820.parcial_pcii;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -66,9 +67,11 @@ public class Busqueda extends AppCompatActivity {
 
             }
         });
+    }
 
-
-
-
+    public void vi(View view){
+        Intent i = new Intent(this, Registros.class);
+        startActivity(i);
+        finish();
     }
 }

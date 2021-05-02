@@ -8,20 +8,60 @@
     android:background="@color/white">
 
 
-    <Button
-        android:id="@+id/button"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:background="#065C5B"
-        android:backgroundTint="#065C5B"
-        android:text="Iniciar"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        android:textStyle="bold"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="90dp"
+            android:text="@string/tema"
+            android:textAlignment="center"
+            android:textColor="#D32F2F"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:text="@string/e1"
+            android:textAlignment="center"
+            android:textColor="#01072E"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="90dp"
+            android:text="@string/e2"
+            android:textAlignment="center"
+            android:textColor="#01072E"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#065C5B"
+            android:backgroundTint="#065C5B"
+            android:text="Iniciar"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:backgroundTint="#065C5B" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

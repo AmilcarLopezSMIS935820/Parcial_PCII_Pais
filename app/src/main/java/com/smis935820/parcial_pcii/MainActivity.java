@@ -18,18 +18,11 @@ public class MainActivity extends AppCompatActivity {
         btmain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(MainActivity.this,Registros.class);
+                Intent intent= new Intent(MainActivity.this, Registros.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
 
-    public void ini(View view){
-        Intent i = new Intent(MainActivity.this, formulario.class);
-        startActivity(i);
-        finish();
-
-
-
-
-    }
 }

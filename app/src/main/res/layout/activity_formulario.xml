@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="Bienvenido"
+        android:text="Bienvenido al Formulario"
         android:textColor="#0673BD"
         android:textSize="24dp"
         android:textStyle="bold"
@@ -69,31 +69,37 @@
             android:id="@+id/btnsave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="#B80F0F"
             android:text="Guardar"
-            android:textStyle="bold"
-            android:textSize="17dp"
             android:textColor="@color/white"
-            android:layout_marginBottom="5dp"/>
+            android:textSize="17dp"
+            android:textStyle="bold"
+            app:backgroundTint="#B80F0F" />
 
         <Button
             android:id="@+id/btnedit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="#E64A19"
             android:text="Editar"
-            android:textStyle="bold"
-            android:textSize="17dp"
             android:textColor="@color/white"
-            android:layout_marginBottom="10dp"/>
+            android:textSize="17dp"
+            android:textStyle="bold"
+            app:backgroundTint="#E64A19" />
 
         <Button
             android:id="@+id/btdelete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:background="#E64A19"
             android:text="Eliminar"
             android:textColor="@color/white"
             android:textSize="17dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:backgroundTint="#E64A19" />
 
         <TextView
             android:id="@+id/tvResponse"
@@ -104,6 +110,33 @@
             android:textSize="15dp"
             android:layout_gravity="center_horizontal"/>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:background="#F3F3F3"
+                android:clickable="true"
+                android:onClick="v1"
+                android:src="@drawable/home"
+                app:backgroundTint="#0B98E4"
+                app:maxImageSize="44dp"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#F3F3F3"
+                android:clickable="true"
+                android:onClick="v2"
+                android:src="@drawable/busqueda"
+                app:backgroundTint="#7A8AEF"
+                app:maxImageSize="45dp"/>
+        </LinearLayout>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
